@@ -43,7 +43,8 @@ namespace ImageResizer
 
                 foreach (string image in Directory.GetFiles(imagePath, "*.jpg"))
                 {
-                    ImageResize.ResizeImage(imagePath, thumbnailPath, intWidth, intHeight);
+                    string newFile = Path.Combine(thumbnailPath, Path.GetFileName(image));
+                    ImageResize.ResizeImage(image, newFile, intWidth, intHeight);
                 }
 
             }
